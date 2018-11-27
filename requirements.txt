@@ -1,0 +1,10 @@
+rasa_core
+  tensorflow==1.10.0
+rasa_nlu
+  tensorflow==1.10.0
+    numpy<=1.14.5,>=1.13.3
+  botocore
+    urllib3
+sklearn_crfsuite
+
+pygraphviz

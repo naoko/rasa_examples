@@ -1,0 +1,82 @@
+intents:
+  - greet
+  - goodbye
+  - inform
+  - affirm
+  - thanks
+  - deny
+  - select_menu_item
+
+# set `auto_fill` to `false` when used in forms
+slots:
+  main_menu:
+    type: categorical
+    values:
+      - target
+      - strategy
+      - predicted
+  distance:
+    auto_fill: false
+    type: unfeaturized
+  finish_time:
+    auto_fill: false
+    type: unfeaturized
+  next_race_distance:
+    auto_fill: false
+    type: unfeaturized
+  predicted_finish_time_result:
+    type: unfeaturized
+  race_strategy_result:
+    type: unfeaturized
+  target_pace_result:
+    type: unfeaturized
+
+
+entities:
+  - distance
+  - finish_time
+  - next_race_distance
+
+actions:
+  - utter_greet
+  - utter_show_menu
+  - utter_goodbye
+  - utter_slots_values
+  - utter_unable_to_parse_distance
+
+forms:
+  - inform_form
+
+templates:
+  utter_greet:
+    - "Hello! I'm your test bot <3"
+  utter_show_menu:
+    - text: Select one of the options below.
+      buttons:
+        - title: Target Pace
+          payload: /select_menu_item{"main_menu":"target"}
+        - title: Race Strategy
+          payload: /select_menu_item{"main_menu":"strategy"}
+        - title: Predicted Finish Time
+          payload: /select_menu_item{"main_menu":"predicted"}
+
+  utter_unable_to_parse_distance:
+    - text: "Sorry, I couldn't parse the distance. Expected input examples: 'marathon', '10 k', '5 miles'"
+
+  utter_goodbye:
+    - text: "Have a great day!"
+
+  utter_ask_distance:
+    - text: "What's the distance you are running?"
+
+  utter_ask_next_race_distance:
+    - text: "What's the distance of your next race?"
+
+  utter_ask_finish_time:
+    - text: "Finish time?"
+
+  utter_slots_values:
+    - text: "got slots:\n
+              - distance: {distance}\n
+              - next_race_distance: {next_race_distance}\n
+              - finish_time: {finish_time}\n"

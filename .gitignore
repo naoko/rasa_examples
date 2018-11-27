@@ -1,0 +1,15 @@
+# python
+/venv
+rasa_core
+__pycache__/
+
+# rasa
+rasa_core
+models/
+reports/
+*.pdf
+
+# IDE
+.idea
+
+
