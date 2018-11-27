@@ -8,6 +8,8 @@ rasa_core
 models/
 reports/
 *.pdf
+*.log
+*.html
 
 # IDE
 .idea
