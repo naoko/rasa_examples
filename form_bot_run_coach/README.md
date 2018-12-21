@@ -1,18 +1,17 @@
 RASA FormAction Example
 =======================
-- Slots should be `unfeaturized`
 - Define `utter_ask_{slot_name}` for slots
 
 # train nlu and dialog
 ```bash
-cd run_coach
+cd form_bot_run_coach
 python train_nlu.py
 python train_dialog.py 
 ```
 
 # start conversation
 ```bash
-cd run_coach
+cd form_bot_run_coach
 sh start_conversation.sh
 ```
 

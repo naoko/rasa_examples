@@ -7,7 +7,6 @@ intents:
   - deny
   - select_menu_item
 
-# set `auto_fill` to `false` when used in forms
 slots:
   main_menu:
     type: categorical

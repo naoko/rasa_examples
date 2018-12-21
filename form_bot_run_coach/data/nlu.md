@@ -75,3 +75,7 @@
 - [1 hours](finish_time)
 - [1.5 hours](finish_time)
 - [1 hour and 30 min](finish_time)
+
+## synonyms:26.2
+- marathon
+- full marathon

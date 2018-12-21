@@ -1,0 +1,48 @@
+intents:
+  - greet
+  - goodbye
+  - inform
+  - affirm
+  - thanks
+  - deny
+  - solar_production
+  - turn_lights_on
+
+slots:
+  name:
+    type: text
+  phone_number:
+    type: text
+
+entities:
+  - name
+  - phone_number
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_slots_values
+  - utter_ask_need
+  - action_get_solar_production
+  - action_turn_lights_on
+
+templates:
+  utter_greet:
+    - "Hello! I'm your test bot <3. What is your name?"
+
+  utter_ask_need:
+    - "What can do for your today {name}?"
+
+  utter_goodbye:
+    - text: "Have a great day!"
+
+  utter_slots_values:
+    - text: "got slots:\n
+              - name: {name}\n
+              - phone_number: {phone_number}\n"
+
+  utter_ask_rephrase:
+    - text: Sorry I didn't get that. Can you rephrase that?
+
+  utter_default:
+    - text: Sorry I couldn't help. I will forward this issue to human.
