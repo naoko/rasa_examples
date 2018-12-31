@@ -1,0 +1,76 @@
+intents:
+  - greet
+  - goodbye
+  - inform
+  - affirm
+  - thanks
+  - deny
+  - select_menu
+
+slots:
+  main_menu:
+    type: categorical
+    values:
+      - greet_me
+      - share_secret
+
+  authenticated:
+    auto_fill: false
+    type: unfeaturized
+
+  auth_code_issued:
+    auto_fill: false
+    type: unfeaturized
+
+  auth_email:
+    auto_fill: false
+    type: unfeaturized
+
+  verification_code:
+    auto_fill: false
+    type: unfeaturized
+
+
+entities:
+  - main_menu
+  - email
+  - verification_code
+
+actions:
+  - utter_greet
+  - utter_show_menu
+  - utter_goodbye
+  - utter_share_secret
+
+forms:
+  - auth_form
+
+templates:
+  utter_greet:
+    - "Hello! I'm your bot <3"
+
+  utter_show_menu:
+    - text: Select one of the options below.
+      buttons:
+        - title: Greet me
+          payload: /select_menu{"main_menu":"greet_me"}
+        - title: Share secret
+          payload: /select_menu{"main_menu":"share_secret"}
+
+  utter_share_secret:
+    - text: "This is my secret"
+    - text: "I brew kombucha"
+    - text: "I love sushi"
+
+
+  utter_ask_email:
+    - text: "What's your email for authentication????"
+
+  utter_ask_auth_email:
+    - text: "What's your email for authentication?"
+
+  utter_ask_verification_code:
+    - text: "Please enter the verification code"
+
+  utter_ack_authenticated:
+    - text: "Looks like you are already authenticated"
